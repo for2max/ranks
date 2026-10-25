@@ -37,4 +37,12 @@ command /adminrank [<text>] [<text>] [<text>]:
       send "&7[&cADMIN&7] &eModification de votre prestige par un administrateur" to arg 2
       send "&7[&cADMIN&7] &7Nouveau prestige: &e%{_name}% to arg 2
       send "&aLe prestige du joueur &e%arg 2% est maintenant: &e%arg 3%" 
-      
+
+
+
+command /grades:
+    aliases: grade, rank, ranks, rankup, ranksup, upgrade, upgrades
+    trigger:
+        
+        GUIGRADES(player)
+        stop
