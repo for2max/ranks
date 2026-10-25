@@ -204,10 +204,3 @@ function GUIGRADES(p: player):
   
 
 
-command /grades:
-    aliases: grade, rank, ranks, rankup, ranksup, upgrade, upgrades
-    trigger:
-        
-        GUIGRADES(player)
-        stop
-
