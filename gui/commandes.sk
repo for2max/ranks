@@ -27,10 +27,14 @@ command /adminrank [<text>] [<text>] [<text>]:
 
       set {_name} to {Grade_%player%}
       send "&aLe grade du joueur &e%arg 2%&a est maintenant: &e%{_name}%"
-      UPGRADE({_p},arg 3)
+      send "&7[&cADMIN&7] &eModification de votre grade par un administrateur" to arg 2
+      send "&7[&cADMIN&7] &7Nouveau grade: &e%{_name}% to arg 2
+      set {GRADE_%player%} to arg 3
 
       
     if arg 1 is "prestige":
       UPGRADE2({_p},arg 3)
+      send "&7[&cADMIN&7] &eModification de votre prestige par un administrateur" to arg 2
+      send "&7[&cADMIN&7] &7Nouveau prestige: &e%{_name}% to arg 2
       send "&aLe prestige du joueur &e%arg 2% est maintenant: &e%arg 3%" 
       
