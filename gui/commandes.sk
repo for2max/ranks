@@ -1,0 +1,36 @@
+
+command /adminrank [<text>] [<text>] [<text>]:
+  permission: admin
+  trigger:
+    if arg 1, arg 2 or arg 3 is not set:
+      send "&cUtilisez: /adminrank [<rank]/[prestige] [joueur] [<ID rank>/<ID prestige>]"
+      stop
+    if arg 1 is not "rank" or "prestige":
+      send "&cUtilisez: /adminrank [<rank]/[prestige] [joueur] [<ID rank>/<ID prestige>]"
+      stop
+    if arg 3 is not a number:
+      send "&cUtilisez: /adminrank [<rank]/[prestige] [joueur] [<ID rank>/<ID prestige>]"
+      stop
+      
+    set {_grade} to {Grade_%player%}
+    if {_grade} is not set:
+      send "&cLe joueur &e%arg 2%&c est introuvable."
+      stop
+      
+    if arg 1 is "rank":
+      if arg 3 < 0:
+        send "&cLa plage ID de grade est : &e1 - 16&c."
+        stop
+      if arg 3 > 16:
+        send "&cLa plage ID de grade est : &e1 - 16&c."
+        stop
+
+      set {_name} to {Grade_%player%}
+      send "&aLe grade du joueur &e%arg 2%&a est maintenant: &e%{_name}%"
+      UPGRADE({_p},arg 3)
+
+      
+    if arg 1 is "prestige":
+      UPGRADE2({_p},arg 3)
+      send "&aLe prestige du joueur &e%arg 2% est maintenant: &e%arg 3%" 
+      
