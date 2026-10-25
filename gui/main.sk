@@ -51,6 +51,18 @@ function UPGRADE(p: player,g: number):
     launch ball large colored red, purple and white fading to light green and black at {_p}'s location with duration 0
     send title "&6&lFELICITATIONS" with subtitle "" to {_p} for 5 seconds
 
+function UPGRADE2(p: player,g: number):
+
+    set {Prestige_%{_p}%} to {_g}
+    broadcast ""
+    broadcast "&6» &BFélicitations !"
+    broadcast "&6» &9%{_p}% à maintenant atteint le prestige &d%{_g}%"
+    broadcast ""
+    play sound "minecraft:ui.toast.challenge_complete" with volume 1 to {_p}
+    close {_p}'s inventory
+    launch ball large colored red, purple and white fading to light green and black at {_p}'s location with duration 0
+    send title "&6&lFELICITATIONS" with subtitle "" to {_p} for 5 seconds
+
 function CONFIRMEGRADE(p: player,g: number):
     set {_name} to {Grade_%{_g}%}
     set {_prix} to {Grade_prix.%{_g}%}
@@ -191,11 +203,4 @@ function GUIGRADES(p: player):
 
   
 
-
-command /grades:
-    aliases: grade, rank, ranks, rankup, ranksup, upgrade, upgrades
-    trigger:
-        
-        GUIGRADES(player)
-        stop
 

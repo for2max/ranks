@@ -1,6 +1,8 @@
 on join:
     if {Grade_%player%} is not set:
         set {Grade_%player%} to 1
+    if {PRESTIGE_%player%} is not set:
+        set {PRESTIGE_%player%} to 0
     if {Claim_ticket.%player%} is not set:
         set {Claim_ticket.%player%} to 2
 
